@@ -1,5 +1,5 @@
 
-
+const axios = require('axios');
 class Busquedas {
 
     historial = ['Ecatepec', 'Coacalco', 'Atizapán']
@@ -11,7 +11,13 @@ class Busquedas {
     async ciudad(lugar = '') {
         // petición http
 
-        console.log(lugar);
+        try {
+            const resp = await axios.get('https://reqres.in/api/users?page=2');
+            console.log(resp.data);
+        } catch (error) {
+            return [];
+        }
+
 
         return [];
     }
