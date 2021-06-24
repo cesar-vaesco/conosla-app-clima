@@ -1,8 +1,11 @@
-
+/** Esta clase da la funcionalidad a la línea de comandos
+ * ayudandose de la librería inquirer
+  */
 const inquirer = require('inquirer');
 require('colors');
 
 
+//Menú de la app -->  función llamada dentro de inquererMenu()
 const menuOpts = [
     {
         type: 'list',
@@ -29,7 +32,7 @@ const menuOpts = [
 
 
 
-
+// Cabecera del menú
 const inquirerMenu = async () => {
     console.clear();
     console.log('\n==========================='.green);
@@ -42,14 +45,14 @@ const inquirerMenu = async () => {
 }
 
 
-
+// Pregunta para -salir  - hace una pausa y pregunta
 const pausa = async () => {
 
     const question = [
         {
             type: 'input',
             name: 'enter',
-            message: `Presione ${'enter'.green} para continuar`
+            message: `Presione ${'enter'.green} para continuar \n`
         }
     ]
 
@@ -59,7 +62,7 @@ const pausa = async () => {
 }
 
 
-
+//  Función que permite leer el dato que ingresa el usuario
 const leerInput = async (message) => {
     const question = [
         {
