@@ -10,7 +10,7 @@ class Busquedas {
 
     get paramsMapbox() {
         return {
-            'access_token': 'pk.eyJ1IjoiY2VzYXJkZXYiLCJhIjoiY2txYmUzY2xkMDNuaTJucGUwZ2tmcmc5cSJ9.pth8dYxnio3FOE9u_4S3og',
+            'access_token': process.env.MAPBOX_KEY,
             'limit': 5,
             'language': 'es'
         }
@@ -27,7 +27,6 @@ class Busquedas {
             });
 
             const resp = await intance.get();
-
             console.log(resp.data);
 
         } catch (error) {

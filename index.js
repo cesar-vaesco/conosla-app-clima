@@ -1,11 +1,11 @@
-
-require('colors')
+require('dotenv').config();
 
 const { inquirerMenu, pausa, leerInput } = require('./helper/inquirer');
 const Busquedas = require('./models/busqueda');
 
 
 
+/* console.log(process.env.MAPBOX_KEY); */
 
 const main = async () => {
 
@@ -23,6 +23,7 @@ const main = async () => {
                 const lugar = await leerInput('Ciudad :');
                 await busquedas.ciudad(lugar);
                 console.log('Lugar: ', lugar);
+
 
                 //Buscar los lugares
 
