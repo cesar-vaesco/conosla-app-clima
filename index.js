@@ -6,6 +6,7 @@ const Busquedas = require('./models/busqueda');
 
 
 /* console.log(process.env.MAPBOX_KEY); */
+/* api.openweathermap.org/data/2.5/weather?lat=19.60972&lon=-99.06&appid=f369635965b00ad16ced5da4da4b9f3b&units=metric&lang=es */
 
 const main = async () => {
 
@@ -26,6 +27,8 @@ const main = async () => {
                 const lugares = await busquedas.ciudad(terminoBusqueda);
 
                 //Seleccionar el lugar
+
+
                 const idSeleccionado = await listarLugares(lugares);
                 /* console.log({ idSeleccionado }); */
 
