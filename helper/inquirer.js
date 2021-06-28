@@ -22,7 +22,7 @@ const menuOpts = [
             },
             {
                 value: 0,
-                name: `${'3.'.green} Salir....\ngit`
+                name: `${'3.'.green} Salir....\n`
             }
 
         ]
