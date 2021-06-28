@@ -33,22 +33,26 @@ const main = async () => {
                 /* console.log({ idSeleccionado }); */
 
                 const lugarSeleccionado = lugares.find(lugar => lugar.id === idSeleccionado);
-                console.log(lugarSeleccionado);
+                /* console.log(lugarSeleccionado); */
 
                 /* console.log('Lugares: ', lugares); */
                 /* console.log('terminoBusqueda: ', terminoBusqueda); */
 
                 //Datos de clima
+                const clima = await busquedas.climaLugar(lugarSeleccionado.lat, lugarSeleccionado.lng);
+                /* console.log(clima); */
+
 
                 //Mostrar resultados
                 console.log('\nInformación de la ciudad\n'.green);
-                console.log(`Ciudad:  ${lugarSeleccionado.nombre}`.cyan);
+                console.log(`\nCiudad:  ${lugarSeleccionado.nombre}`.cyan);
                 console.log('Lat:', lugarSeleccionado.lat);
                 console.log('Lng:', lugarSeleccionado.lng);
-                console.log('Temperatura:');
-                console.log('Mínima:');
-                console.log('Máxima:');
+                console.log('Temperatura:', clima.temp);
+                console.log('Mínima:', clima.max);
+                console.log('Máxima:', clima.min);
 
+                console.log(`Como está el clima: ${clima.desc.green}`);
                 break;
 
             default:
